@@ -1,6 +1,6 @@
 import requests
 import json
-import testscipy as tsc
+import test_scipy as tsc
 
 url = 'http://172.16.4.84/smcaiot-basicinfo/basicperson/list?order=desc&sort=id&pageNum=1&pageSize=10&mobileNumber=&name=&communityId=&buildingId=&unitId=&floorId=&roomId='
 
