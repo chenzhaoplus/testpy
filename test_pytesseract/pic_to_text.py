@@ -1,3 +1,4 @@
+# 图片转文字
 from PIL import Image
 import pytesseract
 
