@@ -8,7 +8,7 @@ from sklearn.datasets import make_blobs
 # 用sklearn自带的make_blobs方法生成聚类测试数据
 n_samples = 1500
 
-# X 表示该聚类数据集共1500个样本，每个样本默认有2个特征值。y 表示这个1500个样本的“参考答案”的数据集
+# X 表示该聚类数据集共1500个样本，每个样本默认有2个特征值。聚类算法不需要“参考答案”，所以 y 值没有用到
 X, y = make_blobs(n_samples=n_samples)  # 默认 n_features=2，所以生成的 X shape 是 (n_samples,2)
 print("X shape = ", X.shape)
 print("y shape = ", y.shape)
@@ -18,7 +18,7 @@ print("y = ", y)
 
 # 进行聚类，这里n_clusters设定为3，也即聚成3个簇
 kmeans = KMeans(n_clusters=3)
-clf = kmeans.fit(X)
+clf = kmeans.fit(X)  # kmeans聚类算法是无监督算法，所以不需要y这个参考答案做拟合
 y_pred = clf.predict(X)
 # y_pred = kmeans.fit_predict(X)
 print("y_pred shape = ", y_pred.shape)
