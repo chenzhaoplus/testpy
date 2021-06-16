@@ -22,3 +22,7 @@ def select():
     for x in myresult:
         print(x)
         break
+
+
+if __name__ == '__main__':
+    select()
