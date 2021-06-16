@@ -1,4 +1,5 @@
 # 查询mysql表
+# 安装不然会报错 pip install mysql-connector
 import mysql.connector
 
 mydb = mysql.connector.connect(
