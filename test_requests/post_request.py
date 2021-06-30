@@ -1,5 +1,7 @@
 # 获取网页源代码
+import datetime
 import json
+import time
 
 import requests
 
@@ -20,6 +22,10 @@ data = {
     "orderStatuses": ["4"]
 }
 
+start_time = datetime.datetime.now()
 response = requests.post(url=url, headers=headers, data=json.dumps(data))
+end_time = datetime.datetime.now()
+during_time = end_time - start_time
+print(f"耗时: {during_time.microseconds / 1000}ms")
 
 print(response.text)
