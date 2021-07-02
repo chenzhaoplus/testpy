@@ -11,8 +11,7 @@ r = s3.select_object_content(
     Bucket='zzstatic',
     Key='test.json',
     ExpressionType='SQL',
-    # Expression="select * from s3object s where s.Location like '%United States%'",
-    Expression="select * from s3object s",
+    Expression="SELECT * FROM S3Object[*].Rules[*]",
     InputSerialization={
         'CompressionType': 'NONE',
         'JSON': {
