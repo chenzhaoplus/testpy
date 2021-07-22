@@ -1,6 +1,7 @@
 import re
 import sys
 import os
+import redis
 
 
 def allFiles():
@@ -32,7 +33,7 @@ def toRedis():
     with open('/home/redis/tuna/shelles/data.txt', 'r') as logfile:
         for line in logfile:
             print(line)
-            redis_client.sadd('dfs_picture', line.replace('\n', ''))
+            redis.sadd('dfs_picture', line.replace('\n', ''))
         logfile.close()
 
 
