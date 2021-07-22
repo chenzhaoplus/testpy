@@ -35,8 +35,8 @@ def main():
     文件删除返回
     ('Delete file successed.', b'group1/M00/AD/BA/rBAEUmD3whGACkiyAAAAA7KUrj0796.txt', b'172.16.4.82')
     """
-    del_result = client.delete_file(up_result['Remote file_id'])
-    print(f'del file result = {del_result}')
+    # del_result = client.delete_file(up_result['Remote file_id'])
+    # print(f'del file result = {del_result}')
 
     """
     列出所有的group信息
