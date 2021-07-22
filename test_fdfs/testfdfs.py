@@ -35,22 +35,24 @@ def main():
     文件删除返回
     ('Delete file successed.', b'group1/M00/AD/BA/rBAEUmD3whGACkiyAAAAA7KUrj0796.txt', b'172.16.4.82')
     """
-    # del_result = client.delete_file(up_result['Remote file_id'])
-    # print(f'del file result = {del_result}')
+    del_result = client.delete_file(up_result['Remote file_id'])
+    print(f'del file result = {del_result}')
 
     """
     列出所有的group信息
     {'Groups count': 1.0, 'Groups': [ < fdfs_client.tracker_client.Group_info object at 0x0000011541508A30 >]}
     """
     group_result = client.list_all_groups()
-    print(f'group info = {group_result}')
+    print(
+        f'group info, Groups count = {group_result["Groups count"]}, Groups = {" ".join(str(x) for x in group_result["Groups"])}')
 
     """
     列出同一组内的storage servers信息
     {'Group name': b'group1', 'Servers': [<fdfs_client.tracker_client.Storage_info object at 0x00000115415348B0>]}
     """
     result = client.list_servers(b'group1', up_result['Storage IP'])
-    print(f'storage servers info = {result}')
+    print(
+        f'storage servers info, Group name = {result["Group name"]}, Servers = {" ".join(str(x) for x in result["Servers"])}')
 
 
 if __name__ == '__main__':
