@@ -43,7 +43,11 @@ def get_fdfs_file(base_path='/var/lib/fast-dfs/storage/path0/data'):
                     full_path = os.path.join(fdfs_path + paths, file)
                     # print(full_path)
                     # f.write(full_path + '\n')
-                    r.sadd("fdfs:file", full_path)
+                    # r.sadd("fdfs:file", full_path)
+                    mapping = {
+                        full_path: int(cnt - 1),
+                    }
+                    r.zadd("fdfs:file", mapping)
                 except:
                     pass
 
