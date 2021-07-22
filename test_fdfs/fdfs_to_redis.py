@@ -1,7 +1,7 @@
 import os
 import datetime
 import re
-# import redis
+import redis
 
 # fdfs_path = 'group1/M00'
 fdfs_path = 'M00'
@@ -42,8 +42,8 @@ def get_fdfs_file(base_path='/var/lib/fast-dfs/storage/path0/data'):
                     # print("file = " + file)
                     full_path = os.path.join(fdfs_path + paths, file)
                     # print(full_path)
-                    f.write(full_path + '\n')
-                    # r.sadd("fdfs:file", full_path)
+                    # f.write(full_path + '\n')
+                    r.sadd("fdfs:file", full_path)
                 except:
                     pass
 
@@ -62,7 +62,7 @@ def end_tm(start_time=None):
 if __name__ == '__main__':
     start = start_tm()
 
-    # r = redis.StrictRedis(host='172.16.4.82', port=6379, db=0, password='smcaiot_redis_pass')
+    r = redis.StrictRedis(host='172.16.4.82', port=6379, db=0, password='smcaiot_redis_pass')
     get_fdfs_file()
 
     end_tm(start)
