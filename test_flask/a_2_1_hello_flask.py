@@ -12,13 +12,13 @@ if __name__ == '__main__':
     """
     如果没有 app.run() 方法，则需要执行下面指令启动
     shell:
-        export FLASK_APP=test_flask
+        export FLASK_APP=test_flask.a_2_1_hello_flask.py
         flask run
     cmd:
-        set FLASK_APP=test_flask
+        set FLASK_APP=test_flask.a_2_1_hello_flask.py
         flask run
     powershell:
-        $env:FLASK_APP = "test_flask"
+        $env:FLASK_APP = "test_flask.a_2_1_hello_flask.py"
         flask run
     """
     app.run()
