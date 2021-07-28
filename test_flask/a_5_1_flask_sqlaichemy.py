@@ -5,8 +5,8 @@ from flask_sqlalchemy import SQLAlchemy
 """
 set FLASK_APP=test_flask.a_5_1_flask_sqlaichemy.py
 flask shell
->>> from a_5_1_flask_sqlaichemy import db
-db.create_all()
+>>> from test_flask.a_5_1_flask_sqlaichemy import db
+>>> db.create_all()
 """
 
 
