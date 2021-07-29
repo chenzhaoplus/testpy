@@ -17,7 +17,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = \
     f'mysql://ibmp_test:XZdfjXIEsrumGrfFTmfltbtAuQCECUdl@172.16.4.83:3306/ibmp'
-app.config['SQLALCHEMY TRACK MODIFICATIONS'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
