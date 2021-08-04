@@ -23,7 +23,6 @@ class DMysqlConfig:
         :param passwd:密码
         :param charset:字符编码
     """
-
     def __init__(self, host, db, user, password, port=3306):
         self.host = host
         self.port = port
@@ -38,7 +37,7 @@ class DMysqlConfig:
         self.maxConnection = 100
 
         self.blocking = True
-        self.maxUsage = 100
+        self.maxUsage = 0
         self.setSession = None
         self.reset = True
 
@@ -149,12 +148,6 @@ class UsingMysql(object):
     def cursor(self):
         return self._cursor
 
-
-def check_it():
-    with UsingMysql(log_time=True) as um:
-        sql = "select count(id) as total from Product"
-        print("-- 当前数量: %d " % um.get_count(sql, None, 'total'))
-
-
-if __name__ == '__main__':
-    check_it()
+    @property
+    def conn(self):
+        return self._conn
