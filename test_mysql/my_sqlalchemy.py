@@ -42,6 +42,7 @@ class UsingAlchemy(object):
         self._commit = commit
         self._log_label = log_label
         self._session = Session()
+        self._engine = engine
 
     def __enter__(self):
         # 如果需要记录时间
@@ -62,6 +63,10 @@ class UsingAlchemy(object):
     @property
     def session(self):
         return self._session
+
+    @property
+    def engine(self):
+        return self._engine
 
 
 # 测试获取一条记录
