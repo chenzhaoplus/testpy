@@ -18,11 +18,13 @@ def test_sadd():
     print(x)
 
 
-def test_delete():
+def test_delete(keys):
     """
     delete
     """
-    r.delete("fdfs1:file1")
+    list_keys = r.keys(keys)
+    for key in list_keys:
+        r.delete(key)
 
 
 def test_zadd():
@@ -44,9 +46,9 @@ def test_zadd():
 
 def main():
     # test_set()
-    # test_delete()
+    test_delete("expimp:speed:*")
     # test_sadd()
-    test_zadd()
+    # test_zadd()
 
 
 if __name__ == '__main__':
